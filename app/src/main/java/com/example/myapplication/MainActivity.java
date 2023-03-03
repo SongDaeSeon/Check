@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 import java.util.Locale;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private TextToSpeech tts;
