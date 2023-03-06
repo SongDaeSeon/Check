@@ -63,19 +63,21 @@ public class MainActivity extends AppCompatActivity {
                     setVolume(amp);
                     Log.d("Decibel", String.valueOf(amp));
 
-                    if(valueOf(amp) < 10000) {
-                        AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-                        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 5, 0);
-                    }
-                    else if(valueOf(amp) > 10000 && valueOf(amp) < 20000) {
-                        AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-                        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 10, 0);
-                    }
-                    else{
-                        AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-                        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 15, 0);
+                    AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                    audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, ((int) amp /1500)+9, 0);
 
-                    }
+//                    if(valueOf(amp) < 10000) {
+//                        AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+//                        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 5, 0);
+//                    }
+//                    else if(valueOf(amp) > 10000 && valueOf(amp) < 20000) {
+//                        AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+//                        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 10, 0);
+//                    }
+//                    else{
+//                        AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+//                        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 15, 0);
+//                    }
                 }
             }
         };
